@@ -1,0 +1,26 @@
+@import '../modules/colors.scss';
+@import '../main.scss';
+
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: $light1;
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+.options-main, .options-user {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.options-main {
+    width: 270px;
+}
+
+.options-user {
+    width: 150px;
+}
+
