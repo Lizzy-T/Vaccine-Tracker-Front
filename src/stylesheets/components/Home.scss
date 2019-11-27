@@ -1,0 +1,18 @@
+@import "../modules/_colors.scss";
+
+.home {
+    background-image: url('../photos/passport-map.jpg');
+    height: 100vh;
+    padding: 5rem;
+}
+
+.welcome-message {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+    justify-items: center;
+    margin-left: 60%;
+    padding: 5rem 4rem;
+    background-color: $light4;
+    text-align: center;
+}
