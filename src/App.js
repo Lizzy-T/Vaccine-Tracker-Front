@@ -1,17 +1,16 @@
 import React from 'react';
 
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Main from './components/Main'
 
 import './App.scss';
 
-function App() {
+export default function App(props) {
   return (
-    <div className="App">
-        <Navbar />
-        <Home />
+    <div>
+      <Navbar />
+      <Main />
     </div>
   );
 }
 
-export default App;
