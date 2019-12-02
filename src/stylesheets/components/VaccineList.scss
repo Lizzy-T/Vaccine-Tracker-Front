@@ -1,0 +1,20 @@
+@import '../modules/colors.scss';
+
+.vaccine-card-container {
+    background-color: $accent6;
+    padding: 50px 115px;
+}
+
+.vaccine-card-container h2 {
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.sources {
+    padding: 100px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    text-align: center;
+}
