@@ -1,0 +1,43 @@
+@import '../modules/colors';
+@import '../modules/padding';
+
+.login {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $main-vert $main-hori;
+    background-color: $accent6;
+    height: 100%;
+}
+
+.login h2 {
+    padding-bottom: 20px;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 350px;
+    height: 150px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.email, .password {
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+.newUserButton, .submitUser {
+    margin-top: 10px;
+}
+
+.login-padding-top {
+    height: 100px;
+}
+
+.login-padding-bottom {
+    height: 85vh;
+}
