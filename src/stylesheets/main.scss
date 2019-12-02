@@ -24,3 +24,16 @@ h3 {
 p {
     font-size: $small;
 }
+
+a {
+    text-decoration: none;
+    color: $dark1;
+}
+
+a:hover {
+    color: $dark3;
+}
+
+a:active {
+    color: $accent1;
+}

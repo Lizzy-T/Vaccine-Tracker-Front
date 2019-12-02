@@ -2,13 +2,14 @@
 
 .vaccine-card-container {
     background-color: $accent6;
-    padding: 50px 115px;
+    padding: 38.5px 155px;
 }
 
 .vaccine-card-container h2 {
     border-bottom: 3px solid black;
     padding-bottom: 5px;
     margin-bottom: 25px;
+    padding-left: 15px;
 }
 
 .sources {
@@ -17,4 +18,8 @@
     flex-flow: column wrap;
     align-content: center;
     text-align: center;
+}
+
+.sources h4 {
+    margin-bottom: 5px;
 }
