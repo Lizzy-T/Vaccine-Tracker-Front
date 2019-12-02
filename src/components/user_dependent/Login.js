@@ -2,14 +2,18 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { loginUser } from '../../actions/user'
+import FormInput from './FormInput'
+import Errors from './Errors'
+
+import { loginUser, logoutUser } from '../../actions/user'
+import { navigateTo } from '../../helpers'
 
 import "../../stylesheets/components/Login.scss"
 
 class Login extends Component {
-    state = {
-        email: '',
-        password: ''
+    componentDidMount = () => {
+        localStorage.clear()
+        this.props.logoutUser()
     }
 
     handleChange = (e) => {
@@ -19,52 +23,39 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const { email, password } = this.state
-
-        this.props.loginUser({email, password})
         
-        this.setState({
-            email: '',
-            password: ''
-        })
+        const password = this.refs.password.state.password
+        const email = this.refs.email.state.email
+        const { history, loginUser } = this.props
+        
+        loginUser({email, password})
+            .then(()=> {
+                if (localStorage.token) {
+                navigateTo(history, "profile")}
+            })
     }
 
     render() {
-        const { email, password } = this.state
+        const { error } = this.props
         return (
             <div className="login">
                 <div className='login-padding-top'>
                 </div>
                 <h2>Welcome Back</h2>
+
                 <form className="login-form"
-                    onSubmit={this.handleSubmit}
-                >
-                    <input 
-                        className='email'
-                        name="email"
-                        type="text"
-                        placeholder="email"
-                        value={email}
-                        onChange={this.handleChange}
-                    />
-                    <input 
-                        className='password'
-                        name="password"
-                        type="password"
-                        placeholder="password"
-                        value={password}
-                        onChange={this.handleChange}
-                    />
+                    onSubmit={this.handleSubmit} >
+                    <FormInput value="email" type="text" ref="email"/>
+                    <FormInput value="password" type="password" ref="password"/>
+                    { error
+                    ? <Errors errors={[error]} />
+                    : <></>
+                    }
                     <Link className="btnlink newUserButton"
-                        to='/create-user'
-                    >
+                        to='/create-user'>
                         New User
                     </Link>
-                    <input
-                        className='submitUser'
-                        type="submit"
-                        value="Sign In"
-                        />
+                    <FormInput value="signIn" type="submit" />
                 </form>
                 <div className='login-padding-bottom'>
                 </div>
@@ -74,7 +65,12 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    loginUser: (user) => loginUser(dispatch, user)
+    loginUser: (user) => loginUser(dispatch, user),
+    logoutUser: () => logoutUser(dispatch)
 })
 
-export default connect(null, mapDispatchToProps)(Login)
+const mapStateToProps = (state) => ({
+    error: state.user.error
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
