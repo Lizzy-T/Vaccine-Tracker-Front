@@ -1,4 +1,4 @@
-import { LOGIN, BASE_URL, handleResponse } from '../helpers'
+import { LOGIN, handleResponse, fetchCall } from '../helpers'
 
 export const loginUser = (dispatch, user) => {
     fetchLogin(user)
@@ -7,11 +7,5 @@ export const loginUser = (dispatch, user) => {
 }
 
 const fetchLogin = (user) => {
-    return fetch(`${BASE_URL}/login`, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
+    return fetchCall("login", "POST", user)
 }
