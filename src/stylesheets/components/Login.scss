@@ -20,7 +20,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: 350px;
-    height: 150px;
+    height: 175px;
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -28,9 +28,10 @@
 .email, .password {
     grid-column: 1 / span 2;
     justify-self: center;
+    height: 45px;
 }
 
-.newUserButton, .submitUser {
+.newUserButton, .signIn {
     margin-top: 10px;
 }
 

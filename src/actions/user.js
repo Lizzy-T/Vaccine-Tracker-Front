@@ -1,9 +1,25 @@
-import { LOGIN, handleResponse, fetchCall } from '../helpers'
+import { 
+    LOGIN,
+    LOGOUT, 
+    handleResponse, 
+    fetchCall
+ } from '../helpers'
+
+
+export const logoutUser = (dispatch) => {
+    dispatch({type: LOGOUT})
+}
 
 export const loginUser = (dispatch, user) => {
-    fetchLogin(user)
+    return fetchLogin(user)
         .then(handleResponse)
+        .then(saveToken)
         .then(user => dispatch({type: LOGIN, user}))   
+}
+
+const saveToken = (response) => {
+    if (response.token){ localStorage.setItem("token", response.token)}
+    return response
 }
 
 const fetchLogin = (user) => {
