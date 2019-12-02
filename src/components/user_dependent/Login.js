@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import { loginUser } from '../../actions/user'
 
 import "../../stylesheets/components/Login.scss"
 
-export default class Login extends Component {
+class Login extends Component {
     state = {
         email: '',
         password: ''
@@ -18,6 +21,8 @@ export default class Login extends Component {
         e.preventDefault()
         const { email, password } = this.state
 
+        this.props.loginUser({email, password})
+        
         this.setState({
             email: '',
             password: ''
@@ -67,3 +72,9 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+    loginUser: (user) => loginUser(dispatch, user)
+})
+
+export default connect(null, mapDispatchToProps)(Login)
