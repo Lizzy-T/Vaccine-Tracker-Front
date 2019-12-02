@@ -21,8 +21,14 @@ function VaccineList({vaccines}) {
             </ul>
             <div className='sources'>
                 <h4>Sources:</h4>
-                <a href='https://www.who.int/topics/vaccines/en/'>World Health Organization</a>
-                <a href='https://www.passporthealthusa.com/vaccinations/'>Passport Health</a>
+                <a href='https://www.who.int/topics/vaccines/en/' 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >World Health Organization</a>
+                <a href='https://www.passporthealthusa.com/vaccinations/' 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Passport Health</a>
             </div>
         </div>
     )
