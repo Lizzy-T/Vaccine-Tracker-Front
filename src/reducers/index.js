@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux'
 
-export default combineReducers({})
+import { vaccines } from './vaccines'
+
+export default combineReducers({
+    vaccines
+})
