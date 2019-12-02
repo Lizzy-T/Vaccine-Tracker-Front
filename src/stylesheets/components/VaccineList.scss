@@ -1,8 +1,9 @@
 @import '../modules/colors.scss';
+@import '../modules/padding';
 
 .vaccine-card-container {
     background-color: $accent6;
-    padding: 38.5px 155px;
+    padding: $main-vert $main-hori;
 }
 
 .vaccine-card-container h2 {

@@ -1,0 +1,32 @@
+@import '../modules/colors';
+@import '../partials/typography';
+@import '../partials/box-shadow';
+
+button {
+    background-color: $accent1;
+    outline: none;
+    box-shadow: $button-shadow;
+    font-family: $heading;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: $accent3;
+}
+
+
+.btnlink {
+    background-color: $accent1;
+    outline: none;
+    box-shadow: $button-shadow;
+    font-family: $heading;
+    text-align: center;
+    padding: 8px;
+    font-size: $small;
+}
+
+.btnlink:hover {
+    cursor: pointer;
+    background-color: $accent3;
+    color: buttontext;
+}

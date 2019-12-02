@@ -26,8 +26,11 @@ export default function Navbar (props) {
                         </li>
                 </ul>
                 <ul className='options-user'>
-                    <li>Profile</li>
-                    <li>Sign In</li>
+                    <li>
+                        <NavLink to='/login'>
+                            Sign In
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
     )
