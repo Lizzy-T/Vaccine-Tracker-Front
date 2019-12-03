@@ -21,7 +21,7 @@ export default function Main () {
             <Route path='/vaccines' component={Vaccines} />
             <Route path='/login' component={Login} />
             <Route path='/create-user' component={CreateUser} />
-            <Route path='/profile' component={Profile} />
+            <Route path='/my-vaccines' component={Profile} />
         </Switch>
     )
 }
