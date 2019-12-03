@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../helpers'
+import { LOGIN, LOGOUT, SETUSER } from '../helpers'
 
 export const user = (state={}, action) => {
     switch(action.type){
@@ -6,6 +6,8 @@ export const user = (state={}, action) => {
             return action.user;
         case LOGOUT:
             return {};
+        case SETUSER:
+            return action.user;
         default:
             return state
     }

@@ -31,7 +31,7 @@ class Login extends Component {
         loginUser({email, password})
             .then(()=> {
                 if (localStorage.token) {
-                navigateTo(history, "profile")}
+                navigateTo(history, "my-vaccines")}
             })
     }
 

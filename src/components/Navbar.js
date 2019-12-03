@@ -4,6 +4,7 @@ import {
 } from "react-router-dom"
 
 import '../stylesheets/components/Navbar.scss'
+import { TOKEN } from '../helpers'
 
 export default function Navbar (props) {
     return (
@@ -23,6 +24,13 @@ export default function Navbar (props) {
                     <li>
                         <NavLink to='/login'> Sign In </NavLink>
                     </li>
+                    {
+                        TOKEN
+                        ?<li>
+                            <NavLink to='/my-vaccines'>My Vaccines</NavLink>
+                        </li>
+                        : <></>
+                    }
                 </ul>
             </nav>
     )

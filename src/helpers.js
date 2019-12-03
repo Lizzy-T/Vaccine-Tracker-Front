@@ -5,24 +5,38 @@ export const BASE_URL = "http://localhost:9000"
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
+export const SETUSER = 'SETUSER'
+export const SETUSERVACCINES = 'SETUSERVACCINES'
+export const USER_ID = localStorage.user_id
+export const TOKEN = localStorage.token
+
 
 export const handleResponse = (response) => (response.json())
 
-export const fetchCall = (endpoint, method, content) => {
+export const fetchCall = (endpoint, method='GET', content=null) => {
     const headers = {
         'Content-Type': 'application/json'
     }
     
-    const token = localStorage.token
-    if (token) { headers['Authorization'] = `Bearer ${token}`}
+    if (TOKEN) { headers['Authorization'] = `Bearer ${TOKEN}`}
     
-    const body = JSON.stringify(content)
+    if (content) {
+        const body = JSON.stringify(content)
+        return fetch(`${BASE_URL}/${endpoint}`, { 
+            method, 
+            headers, 
+            body
+        })
+    } else {
+        return fetch(`${BASE_URL}/${endpoint}`, { 
+            method, 
+            headers 
+        })
+    }
+}
 
-    return fetch(`${BASE_URL}/${endpoint}`, { 
-        method, 
-        headers, 
-        body
-    })
+export const justFetch = (endpoint) => {
+    return fetch(`${BASE_URL}/${endpoint}`)
 }
 
 export const navigateTo = (history, path) => {
