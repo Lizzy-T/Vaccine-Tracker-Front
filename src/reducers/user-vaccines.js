@@ -1,4 +1,4 @@
-import { SETUSERVACCINES, LOGOUT } from '../helpers'
+import { SETUSERVACCINES, LOGOUT, ADDVACCINE } from '../helpers'
 
 export const userVaccines = (state=[], action) => {
     switch(action.type){
@@ -6,6 +6,8 @@ export const userVaccines = (state=[], action) => {
             return action.list;
         case LOGOUT:
             return [];
+        case ADDVACCINE:
+            return [action.vaccine, ...state]
         default: 
             return state
     }

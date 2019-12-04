@@ -7,6 +7,8 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const SETUSER = 'SETUSER'
 export const SETUSERVACCINES = 'SETUSERVACCINES'
+export const ADDVACCINE = 'ADDVACCINE'
+
 export const TOKEN = localStorage.token
 
 export const handleResponse = (response) => (response.json())
