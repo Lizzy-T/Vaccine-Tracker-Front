@@ -1,0 +1,13 @@
+@import "../modules/padding";
+@import "../modules/colors";
+
+.map {
+    background-color: $dark4;
+    padding: $main-vert $main-hori;
+}
+
+.map-heading {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
