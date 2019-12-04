@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../../stylesheets/components/UserVaccineList.scss'
+
 import UserVaccineListing from './UserVaccineListing'
 
 export default function UserVaccineList({vaccineList}) {
@@ -11,8 +13,15 @@ export default function UserVaccineList({vaccineList}) {
         ))
     }
     return (
-        <div>
-            { createList() }
+        <div className='userVaccineList'>
+            <div className='myVaccine-table-header'>
+                <p>Vaccine</p>
+                <p className='myVaccine-date'>Given</p>
+                <p className='myVaccine-date'>Expires</p>
+            </div>
+            <ul>
+                { createList() }
+            </ul>
         </div>
     )
 }

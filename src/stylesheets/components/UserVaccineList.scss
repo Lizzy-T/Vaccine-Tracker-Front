@@ -1,0 +1,25 @@
+@import '../partials/grid';
+@import '../partials/box-shadow';
+@import '../modules/colors';
+
+.userVaccineList {
+    margin: 30px;
+    padding: 25px;
+    background-color: $dark8;
+}
+
+.myVaccine-table-header {
+    display: grid;
+    grid-template-columns: $card-template-column;
+    padding-bottom: 15px;
+    column-gap: $card-column-gap;
+}
+
+.myVaccine-table-header p {
+    border-bottom: $table-heading;
+    padding-bottom: 2px;
+}
+
+.myVaccine-date {
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+@import '../modules/colors';
+@import '../modules/padding';
+@import '../partials/box-shadow';
+
+.profile {
+    background-color: $accent6;
+    padding: $main-div;
+}
+
+.profile h2 {
+    border-bottom: $heading-bottom;
+    padding-bottom: $heading-pb;
+    margin-bottom: $heading-mb;
+    padding-left: $heading-pl;
+}

@@ -1,0 +1,8 @@
+@import '../partials/grid';
+
+.user-vaccine-card {
+    display: grid;
+    grid-template-columns: $card-template-column;
+    column-gap: $card-column-gap;
+    padding-bottom: 20px;
+}

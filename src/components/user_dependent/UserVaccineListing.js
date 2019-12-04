@@ -1,12 +1,14 @@
 import React from 'react'
 
+import '../../stylesheets/components/UserVaccineListing.scss'
+
 export default function UserVaccineListing({exp, given, vaccine}) {
 
     return (
-        <div>
+        <div className='user-vaccine-card'>
             <p>{vaccine.name}</p>
-            <p>Given {given}</p>
-            <p>Expires: {
+            <p className='myVaccine-date'>{given}</p>
+            <p className='myVaccine-date'>{
                 exp
                 ? exp
                 : "Lifetime"
