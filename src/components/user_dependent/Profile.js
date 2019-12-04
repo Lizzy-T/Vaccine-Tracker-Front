@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import UserVaccineListing from './UserVaccineList'
+import AddVaccineForm from './AddVaccineForm'
 
 import "../../stylesheets/components/Profile.scss"
 
@@ -21,6 +22,7 @@ class Profile extends Component {
             <div className="profile">
                 <h2>My Current Vaccines</h2>
                 <UserVaccineListing vaccineList={userVaccines} />
+                <AddVaccineForm />
             </div>
         )
     }
