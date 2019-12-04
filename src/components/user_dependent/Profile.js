@@ -18,8 +18,8 @@ class Profile extends Component {
     render() {
         const { userVaccines } = this.props
         return (
-            <div>
-                <h1>My Current Vaccines</h1>
+            <div className="profile">
+                <h2>My Current Vaccines</h2>
                 <UserVaccineListing vaccineList={userVaccines} />
             </div>
         )

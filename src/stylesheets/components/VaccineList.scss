@@ -1,16 +1,17 @@
 @import '../modules/colors.scss';
 @import '../modules/padding';
+@import '../partials/box-shadow';
 
 .vaccine-card-container {
     background-color: $accent6;
-    padding: $main-vert $main-hori;
+    padding: $main-div;
 }
 
 .vaccine-card-container h2 {
-    border-bottom: 3px solid black;
-    padding-bottom: 5px;
-    margin-bottom: 25px;
-    padding-left: 15px;
+    border-bottom: $heading-bottom;
+    padding-bottom: $heading-pb;
+    margin-bottom: $heading-mb;
+    padding-left: $heading-pl;
 }
 
 .sources {
