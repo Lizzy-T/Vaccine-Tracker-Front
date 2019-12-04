@@ -2,11 +2,22 @@ import React from 'react'
 import {
     NavLink
 } from "react-router-dom"
+import { connect } from 'react-redux'
 
 import '../stylesheets/components/Navbar.scss'
-import { TOKEN } from '../helpers'
 
-export default function Navbar (props) {
+function Navbar ({user}) {
+
+    const ifUserPresent = (yes, no) => {
+        return (user.id) ? yes : no
+    }
+
+    const myVaccineLink = (
+            <li>
+                <NavLink to='/my-vaccines'>My Vaccines</NavLink>
+            </li>
+            )
+
     return (
             <nav className='navbar'>
                 <ul className='options-main'>
@@ -20,18 +31,20 @@ export default function Navbar (props) {
                         <NavLink to='/vaccines'> Vaccines </NavLink>
                     </li>
                 </ul>
-                <ul className='options-user'>
+                <ul className={ifUserPresent('options-user','sign-out')}>
+                    {ifUserPresent(myVaccineLink, <></>)}
                     <li>
-                        <NavLink to='/login'> Sign In </NavLink>
+                        <NavLink to='/login'> 
+                            {ifUserPresent("Sign Out","Log In")}
+                        </NavLink>
                     </li>
-                    {
-                        TOKEN
-                        ?<li>
-                            <NavLink to='/my-vaccines'>My Vaccines</NavLink>
-                        </li>
-                        : <></>
-                    }
                 </ul>
             </nav>
     )
 }
+
+const mapStateToProps = (state) => ({
+    user: state.user
+})
+
+export default connect(mapStateToProps, null)(Navbar)
