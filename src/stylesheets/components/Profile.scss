@@ -5,6 +5,7 @@
 .profile {
     background-color: $accent6;
     padding: $main-div;
+    padding-bottom: 160px;
 }
 
 .profile h2 {
@@ -12,4 +13,8 @@
     padding-bottom: $heading-pb;
     margin-bottom: $heading-mb;
     padding-left: $heading-pl;
+}
+
+.addmore {
+    margin-top: 160px;
 }

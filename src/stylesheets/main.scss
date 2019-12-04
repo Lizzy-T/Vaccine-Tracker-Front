@@ -28,15 +28,16 @@ p {
     font-size: $small;
 }
 
-a {
+a, .clickable {
     text-decoration: none;
     color: $dark1;
 }
 
-a:hover {
+a:hover, .clickable:hover {
+    cursor: pointer;
     color: $dark3;
 }
 
-a:active {
+a:active, .clickable:active {
     color: $accent1;
 }

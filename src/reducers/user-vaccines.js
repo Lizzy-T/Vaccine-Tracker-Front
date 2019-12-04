@@ -7,7 +7,7 @@ export const userVaccines = (state=[], action) => {
         case LOGOUT:
             return [];
         case ADDVACCINE:
-            return [action.vaccine, ...state]
+            return [...state, action.vaccine]
         default: 
             return state
     }

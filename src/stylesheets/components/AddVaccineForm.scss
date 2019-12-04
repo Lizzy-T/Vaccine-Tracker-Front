@@ -1,0 +1,41 @@
+@import '../modules/padding';
+@import '../partials/grid';
+@import '../partials/box-shadow';
+@import '../modules/colors';
+
+.addvaccine {
+    align-self: center;
+    margin: 30px;
+    padding: 25px;
+    background-color: $accent8;
+}
+
+.addVaccine-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+
+.form-table, .form-labels {
+    display: grid;
+    grid-template-columns: $card-template-column;
+    column-gap: $card-column-gap;
+}
+
+.form-labels {
+    margin-bottom: 20px;
+}
+
+.form-labels p {
+    border-bottom: $table-heading;
+}
+
+.submit-form {
+    margin-top: 30px;
+    align-self: center;
+    width: 50%;
+}
+
+.center {
+    text-align: center;
+}
