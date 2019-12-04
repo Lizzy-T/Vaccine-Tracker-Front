@@ -7,18 +7,15 @@ import {
  } from '../helpers'
 
 
-export const setUser = (dispatch, id) => {
-    fetchUser(id)
+export const setUser = (dispatch) => {
+    fetchUser()
     .then(handleResponse)
-    .then(console.log)
-    // .then(user => dispatch({type: SETUSER, user}))
+    .then(user => dispatch({type: SETUSER, user}))
     
 }
 
 const fetchUser = (id) => {
-    console.log(id)
-
-    return fetchCall(`users/${id}`, 'SHOW')
+    return fetchCall(`profile`, 'GET')
 }
 
 export const logoutUser = (dispatch) => {

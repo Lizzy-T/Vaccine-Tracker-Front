@@ -7,9 +7,7 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const SETUSER = 'SETUSER'
 export const SETUSERVACCINES = 'SETUSERVACCINES'
-export const USER_ID = localStorage.user_id
 export const TOKEN = localStorage.token
-
 
 export const handleResponse = (response) => (response.json())
 
