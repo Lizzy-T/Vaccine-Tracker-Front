@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import FormInput from './FormInput'
 
 import { addVaccine } from '../../actions/user-vaccines'
-import { todayDate } from '../../helpers'
+
+import "../../stylesheets/components/AddVaccineForm.scss"
 
 class AddVaccineForm extends Component {
     state = {
@@ -19,7 +20,7 @@ class AddVaccineForm extends Component {
             else { return [...memo, vaccine] }
         }, [])
 
-        return validVaccines.map(vaccine => <option value={vaccine.id} >{vaccine.name}</option> )
+        return validVaccines.map(vaccine => <option key={vaccine.id} value={vaccine.id} >{vaccine.name}</option> )
     }
 
     handleSubmit = (e) => {
@@ -42,18 +43,24 @@ class AddVaccineForm extends Component {
     }
 
     render() {
+        const { isFormShowing } = this.state
         return (
             <div className='addvaccine'>
-                <form onSubmit={this.handleSubmit}>
-                    <select name="vaccine_id" onChange={this.handleChange}>
-                        <option>- Select Vaccine -</option>
-                    {this.vaccineOptions()}
-                    </select>
-                    <label>Given</label>
-                    <FormInput type='date' value='given' ref='given'/>
-                    <label>Expiration(if applicable)</label>
-                    <FormInput type='date' value='exp' ref='exp' />
-                    <FormInput type='submit' value='Add to My Vaccines'/>
+                <div className="form-labels">
+                    <p>Vaccine</p>
+                    <p className='center' >Given</p>
+                    <p className='center' >Expiration(optional)</p>
+                </div>
+                <form className="addVaccine-form" onSubmit={this.handleSubmit}>
+                    <div className="form-table">
+                        <select name="vaccine_id" onChange={this.handleChange}>
+                            <option>- Select Vaccine -</option>
+                        {this.vaccineOptions()}
+                        </select>
+                        <FormInput type='date' value='given' ref='given'/>
+                        <FormInput type='date' value='exp' ref='exp' />
+                    </div>
+                    <input className='submit-form' type='submit' value='Add to My Vaccines'/>
                 </form>
             </div>
         )
