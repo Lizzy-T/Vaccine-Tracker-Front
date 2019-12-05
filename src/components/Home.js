@@ -8,7 +8,7 @@ export default function Home() {
             <div className='welcome-message'>
                 <h1>Welcome</h1>
                 <h1>to</h1>
-                <h1>Vaccine Journal</h1>
+                <h1>Vaccine Tracker</h1>
             </div>
         </div>
     )

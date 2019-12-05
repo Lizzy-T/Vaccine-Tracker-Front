@@ -9,7 +9,6 @@ export const SETUSER = 'SETUSER'
 export const SETUSERVACCINES = 'SETUSERVACCINES'
 export const ADDVACCINE = 'ADDVACCINE'
 
-export const TOKEN = localStorage.token
 
 export const handleResponse = (response) => (response.json())
 
@@ -17,6 +16,7 @@ export const fetchCall = (endpoint, method='GET', content=null) => {
     const headers = {
         'Content-Type': 'application/json'
     }
+    const TOKEN = localStorage.token
     
     if (TOKEN) { headers['Authorization'] = `Bearer ${TOKEN}`}
     
