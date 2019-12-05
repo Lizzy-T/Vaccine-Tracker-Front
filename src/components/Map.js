@@ -11,12 +11,12 @@ export default class Map extends Component {
 
     initTableau () {
         const vizUrl =
-            "https://10ay.online.tableau.com/t/elizabethtongporfolio/views/DiseaseVaccineWorld/WorldwideDiseaseCases?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link";
+            "https://10ay.online.tableau.com/t/lizzytongportfolio/views/DiseaseVaccineWorld/WorldwideDiseaseCases/lizzy.tong@aol.com/abeffb9e-9636-4753-881e-e19a1f3f070d?:display_count=n&:showVizHome=n&:origin=viz_share_link";
  
         const options = {
             hideTabs: true,
             width: "100%",
-            height: "1200px"
+            height: "1000px"
         };
 
         new window.tableau.Viz(this.container, vizUrl, options);

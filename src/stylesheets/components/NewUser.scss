@@ -1,0 +1,44 @@
+@import '../modules/colors';
+@import '../modules/padding';
+@import '../partials/box-shadow';
+
+
+.newuser {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $main-div;
+    background-color: $accent6;
+    height: 100%;
+}
+
+.newuser h2 {
+    padding-bottom: 20px;
+}
+
+.padding-top {
+    height: 100px;
+}
+
+.padding-bottom {
+    margin-bottom: 75vh;
+}
+
+.newuser-form {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 350px;
+    height: 275px;
+}
+
+.newuser-form input {
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.submit-newuser {
+    margin-top: 5px;
+    width: 80%;
+    align-self: center;
+}

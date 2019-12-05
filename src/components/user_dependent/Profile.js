@@ -16,8 +16,8 @@ class Profile extends Component {
 
     componentDidMount = () => {
         const { setUserVaccines, setUser, user } = this.props
-        setUser()
         setUserVaccines(user.id)
+        setUser()
     }
 
     toggleForm = () => {

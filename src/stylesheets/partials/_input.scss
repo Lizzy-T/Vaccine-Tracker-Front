@@ -7,7 +7,7 @@ input {
     width: 100%;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date] {
     border-color: $dark4;
     border-style: solid;
     border-width: 1px;

@@ -52,7 +52,7 @@ class Login extends Component {
                     : <></>
                     }
                     <Link className="btnlink newUserButton"
-                        to='/create-user'>
+                        to='/new-user'>
                         New User
                     </Link>
                     <FormInput value="signIn" type="submit" />

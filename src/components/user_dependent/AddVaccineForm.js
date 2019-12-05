@@ -43,7 +43,6 @@ class AddVaccineForm extends Component {
     }
 
     render() {
-        const { isFormShowing } = this.state
         return (
             <div className='addvaccine'>
                 <div className="form-labels">
