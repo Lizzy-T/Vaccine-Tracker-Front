@@ -37,6 +37,7 @@ class Login extends Component {
 
     render() {
         const { error } = this.props
+        console.log(this.props)
         return (
             <div className="login">
                 <div className='login-padding-top'>
